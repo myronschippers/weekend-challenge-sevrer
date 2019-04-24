@@ -54,14 +54,14 @@ function render() {
     $employeesCntr.empty();
     for (let i = 0; i < employees.length; i++) {
         const indvEmployee = employees[i];
-        $employeesCntr.append('<div></div>');
+        $employeesCntr.append('<tr></tr>');
         const $employeeElem = $employeesCntr.children().last();
-        $employeeElem.append(`<p>${indvEmployee.firstName}</p>`)
-            .append(`<p>${indvEmployee.lastName}</p>`)
-            .append(`<p>${indvEmployee.id}</p>`)
-            .append(`<p>${indvEmployee.title}</p>`)
-            .append(`<p>${formatSalaryAsMoney(indvEmployee.annualSalary)}</p>`)
-            .append(`<button type="button" class="js-deleteBtn btn" data-id="${i}">Delete</button>`);
+        $employeeElem.append(`<td>${indvEmployee.firstName}</td>`)
+            .append(`<td>${indvEmployee.lastName}</td>`)
+            .append(`<td>${indvEmployee.id}</td>`)
+            .append(`<td>${indvEmployee.title}</td>`)
+            .append(`<td>${formatSalaryAsMoney(indvEmployee.annualSalary)}</td>`)
+            .append(`<td><button type="button" class="js-deleteBtn btn" data-id="${i}">Delete</button></td>`);
     }
 
     const totalMonthly = calculateMonthlySalary(employees);
